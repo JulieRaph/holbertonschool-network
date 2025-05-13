@@ -1,4 +1,4 @@
-# What's Happen When...
+# What's Happen When...Your Type google.com in your browser and press enter
 
 ![Description google image 1](images/google1.png)
 ![Description google image 2](images/google2.png)
@@ -14,6 +14,8 @@ Ce billet de blog a pour objectif de lever le voile sur ce processus apparemment
 - Le load balancer
 - Le serveur web
 - Le serveur d'applications
+
+
 
 ## Étape 1 : La requête DNS - Identifier l'adresse IP
 
@@ -49,6 +51,7 @@ Voici les étapes typiques du processus de résolution DNS :
    Pour améliorer l'efficacité, le serveur récursif met en cache l'adresse IP pour une période définie par le paramètre **TTL** (Time to Live) du domaine. Cela signifie que les futures requêtes pour le même domaine dans la période TTL peuvent être résolues plus rapidement sans répéter l'intégralité du processus.
 
 Resource - [Documentation DNS par Cloudflare](https://www.cloudflare.com/learning/dns/what-is-dns/)
+
 
 
 ## Étape 2 : Établir la connexion - TCP/IP
@@ -100,6 +103,7 @@ Ce processus garantit :
 Resource - [TCP 3-Way Handshake Process](https://www.geeksforgeeks.org/tcp-3-way-handshake-process/)
 
 
+
 ## Étape 3 : Sécurité du réseau - Le rôle du pare-feu
 
 Une fois la connexion TCP établie, la requête de votre navigateur doit passer par un pare-feu. Un pare-feu est un système de sécurité réseau qui surveille et contrôle le trafic entrant et sortant en fonction d'un ensemble de règles de sécurité prédéfinies. Il agit comme une barrière entre votre ordinateur ou réseau et le monde extérieur, protégeant contre les accès non autorisés, les cyberattaques et les logiciels malveillants. Les pare-feu fonctionnent en examinant chaque paquet de données qui tente de traverser la frontière du réseau. 
@@ -117,6 +121,7 @@ Il existe deux principaux types de pare-feu : les pare-feu matériels (souvent i
 Les pare-feu sont essentiels tant pour l'appareil de l'utilisateur que pour les serveurs de Google, créant une approche de sécurité en couches. Le pare-feu de l'utilisateur protège contre les connexions entrantes malveillantes, tandis que le pare-feu de Google protège son infrastructure. La sécurité est primordiale sur internet. Comprendre que les pare-feu fonctionnent aux deux extrémités de la connexion souligne l'importance de cette mesure de sécurité. L'inspection avec état est une technique de pare-feu plus avancée qui améliore la sécurité en s'assurant que le trafic entrant est une réponse légitime à une requête sortante, crucial pour empêcher les accès non sollicités. Cette méthode ajoute du contexte au processus de filtrage, la rendant plus efficace contre les attaques sophistiquées par rapport au simple filtrage de paquets.
 
 Resource - [What Does a Firewall Do](https://www.paloaltonetworks.com/cyberpedia/what-does-a-firewall-do)
+
 
 
 ## Étape 4 : Communication sécurisée - HTTPS/SSL
@@ -146,6 +151,7 @@ HTTPS garantit que la communication entre le navigateur de l'utilisateur et le s
 Resource - [Processus de handshake TLS expliqué par Cloudflare](https://www.cloudflare.com/learning/ssl/what-happens-in-a-tls-handshake/)
 
 
+
 ## Étape 5 : Distribution de la charge - L'équilibreur de charge
 
 Google est l'un des sites web les plus visités au monde, recevant des milliards de requêtes chaque jour. Pour gérer un tel volume de trafic, Google utilise une technique appelée "load balancing" (équilibrage de charge). Un load balancer est un dispositif ou un logiciel qui distribue le trafic réseau entrant sur plusieurs serveurs. Cela permet d'éviter qu'un seul serveur ne soit surchargé, ce qui pourrait entraîner des ralentissements ou des pannes. Les load balancers agissent comme des "agents de circulation" pour le trafic internet.
@@ -168,6 +174,7 @@ Dans l'infrastructure de Google, des technologies sophistiquées comme Maglev, G
 Les load balancers sont essentiels pour la scalabilité et la résilience des services de Google, garantissant que le volume massif de requêtes des utilisateurs est traité efficacement sans qu'aucun serveur unique ne soit surchargé. La portée mondiale de Google nécessite un système robuste de distribution du trafic. L'équilibrage de charge est la clé pour maintenir la performance et la disponibilité à cette échelle. L'utilisation d'algorithmes sophistiqués d'équilibrage de charge permet une distribution intelligente du trafic basée sur divers facteurs tels que la charge du serveur, le temps de réponse et la proximité géographique, optimisant ainsi l'expérience utilisateur. Une simple distribution uniforme du trafic pourrait ne pas être l'approche la plus efficace. Les algorithmes qui tiennent compte de la santé du serveur et de la localisation de l'utilisateur peuvent conduire à de meilleures performances.
 
 Resource - [Load Balancing - AWS Documentation](https://aws.amazon.com/what-is/load-balancing/)
+
 
 
 ## Étape 6 : Réponse du serveur web
@@ -206,6 +213,7 @@ Voici ce qui se passe généralement :
 Resource - [Qu'est-ce qu'un serveur web ? - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_web_server)
 
 
+
 ## Étape 7 : Traitement applicatif - Le serveur d'applications
 
 Bien que la page d'accueil initiale de Google puisse sembler principalement statique, elle prend en charge une vaste gamme de fonctionnalités qui pourraient impliquer l'utilisation d'un serveur d'applications. Un serveur d'applications est un logiciel qui fournit un environnement d'exécution pour les applications web, leur permettant de s'exécuter et d'exécuter du code écrit dans des langages de programmation. Il gère le contenu dynamique et la logique métier.
@@ -223,6 +231,7 @@ Les serveurs d'applications améliorent la sécurité, la flexibilité et la sca
 Resource - [Application Servers: What They Are and How They Work - Progress](https://www.progress.com/blogs/application-servers--what-they-are-and-how-they-work)
 
 
+
 ## Étape 8 : Stockage des données - La base de données
 
 Derrière chaque application web complexe comme Google se trouve une infrastructure de base de données robuste. Une base de données est un ensemble organisé de données stockées et accessibles électroniquement à partir d'un système informatique. Les sites web utilisent des bases de données pour stocker divers types d'informations, tels que les comptes d'utilisateurs, les détails des produits, les articles de blog et les index de recherche. Les exemples de systèmes de bases de données incluent MySQL, PostgreSQL, Oracle Database et les bases de données NoSQL comme MongoDB. Les bases de données sont essentielles pour la gestion des grandes quantités de données qui sous-tendent les applications web modernes.
@@ -234,6 +243,7 @@ Google utilise probablement une variété de technologies de bases de données p
 Bien que la page d'accueil de Google puisse paraître simple, elle est soutenue par une infrastructure de base de données massive et complexe qui stocke et récupère les informations nécessaires à sa vaste gamme de services. La fonctionnalité principale de Google repose sur l'indexation et la recherche d'énormes quantités de données, ce qui nécessite des systèmes de base de données sophistiqués. La séparation de la couche de base de données permet une gestion et une scalabilité efficaces des données, permettant à Google de traiter des milliards de requêtes et de points de données. Une couche de base de données dédiée assure la cohérence des données et permet l'optimisation des processus de stockage et de récupération des données.
 
 Resource - [The Purpose of a Database in Web Application Development - Holicky Corporation](https://www.holickycorporation.com/blog/the-purpose-of-a-database-in-web-application-development/)
+
 
 
 ## Conclusion

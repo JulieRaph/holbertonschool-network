@@ -84,6 +84,7 @@ Pour établir une connexion TCP entre votre navigateur (le client) et le serveur
 ### Importance du handshake TCP
 
 Ce processus garantit :
+
 ✔️ La synchronisation des deux extrémités  
 ✔️ Une communication fiable  
 ✔️ La livraison ordonnée des données  
